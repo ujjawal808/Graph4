@@ -1,130 +1,432 @@
-# Graph4 — Graph Algorithms in Java
+# 🚀 Graph4 — Java Graph Algorithms & DSA
 
-A collection of **Graph Data Structure and Algorithm implementations in Java**, created as part of my Data Structures & Algorithms practice.
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-Java-orange?style=for-the-badge&logo=java" alt="Java"/>
+  <img src="https://img.shields.io/badge/DSA-Graph%20Algorithms-blue?style=for-the-badge" alt="DSA"/>
+  <img src="https://img.shields.io/badge/Algorithms-MST%20%7C%20Shortest%20Path-green?style=for-the-badge" alt="Algorithms"/>
+  <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" alt="GitHub"/>
+</p>
 
-The repository focuses on implementing important graph algorithms from scratch and understanding their working, time complexity, and practical applications.
+<p align="center">
+  <b>Implementation of important Graph Data Structures and Algorithms using Java.</b>
+</p>
 
-## 📌 Topics Covered
+---
 
-* Graph Representation
-* Minimum Spanning Tree (MST)
-* Prim's Algorithm
-* Bellman-Ford Algorithm
-* Shortest Path Algorithms
-* Graph Traversal & Problem Solving
+## 👨‍💻 About Me
 
-## 🛠️ Tech Stack
+Hi, I'm **Ujjawal Baliyan**, an MCA student passionate about **Software Development, Data Structures & Algorithms, and Problem Solving**.
 
-* **Language:** Java
-* **Concept:** Data Structures & Algorithms
-* **IDE:** IntelliJ IDEA / VS Code
-* **Version Control:** Git & GitHub
+I use Java to strengthen my understanding of DSA by implementing algorithms from scratch and solving programming problems.
 
-## 📂 Files
+This repository is part of my ongoing **Java DSA learning journey**, focusing specifically on Graph algorithms.
 
-| File                 | Description                                                            |
-| -------------------- | ---------------------------------------------------------------------- |
-| `MST_primsAlgo.java` | Implementation of Prim's Algorithm for finding a Minimum Spanning Tree |
-| `bellmanFord.java`   | Implementation of the Bellman-Ford shortest path algorithm             |
+---
 
-## 🔹 Algorithms
+## 🎯 What I Bring
 
-### 1. Prim's Algorithm
+* 💻 Strong foundation in **Java**
+* 🧠 Problem-solving and algorithmic thinking
+* 🌳 Data Structures & Algorithms practice
+* 📊 Graph algorithm implementation
+* 🔍 Understanding of time and space complexity
+* 🛠️ Hands-on coding practice
+* 🚀 Continuous learning and improvement
 
-Prim's Algorithm is a **greedy algorithm** used to find a Minimum Spanning Tree of a connected, weighted, undirected graph.
+---
 
-**Key idea:**
+## 🧰 Tech Stack
 
-* Start from any vertex.
-* Select the minimum-weight edge connecting the current MST to an unvisited vertex.
-* Continue until all vertices are included.
+### Programming Language
 
-**Complexity:**
+<p>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
+</p>
 
-Using an adjacency matrix:
+### Core Concepts
 
 ```text
-Time Complexity: O(V²)
+Data Structures
+Algorithms
+Graph Theory
+Greedy Algorithms
+Shortest Path Algorithms
+Minimum Spanning Tree
+Priority Queue
+Adjacency List
+Weighted Graphs
 ```
 
-Using a priority queue with an adjacency list:
+### Tools
+
+<p>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
+</p>
+
+---
+
+# 📚 Graph Algorithms Covered
+
+This repository contains implementations of important graph algorithms including:
+
+* 🔗 Graph Representation
+* 🌲 Minimum Spanning Tree
+* ⚡ Prim's Algorithm
+* 🛣️ Bellman-Ford Algorithm
+* 📍 Single Source Shortest Path
+* 🔄 Edge Relaxation
+* ⚠️ Negative Weight Cycle Detection
+* 🧮 Weighted Graph Problems
+
+---
+
+# 📂 Project Structure
 
 ```text
-Time Complexity: O(E log V)
+Graph4/
+│
+├── MST_primsAlgo.java
+├── bellmanFord.java
+└── README.md
 ```
 
 ---
 
-### 2. Bellman-Ford Algorithm
+# 🔥 Featured Implementations
 
-The Bellman-Ford algorithm finds the **shortest paths from a single source vertex** to all other vertices.
+## 🌲 1. Prim's Algorithm
 
-Unlike Dijkstra's algorithm, Bellman-Ford can handle graphs containing **negative edge weights**.
+**File:** `MST_primsAlgo.java`
 
-It can also detect **negative-weight cycles**.
+Prim's Algorithm is a **greedy algorithm** used to find the **Minimum Spanning Tree (MST)** of a connected, weighted, undirected graph.
 
-**Complexity:**
+### 💡 Key Concept
+
+The algorithm starts from a vertex and repeatedly selects the minimum-weight edge that connects a vertex already present in the MST to a vertex outside the MST.
+
+### 🔄 General Approach
 
 ```text
-Time Complexity: O(V × E)
-Space Complexity: O(V)
+Start from a source vertex
+        ↓
+Select minimum weight edge
+        ↓
+Add new vertex to MST
+        ↓
+Update available edges
+        ↓
+Repeat until all vertices are included
 ```
 
-## 🎯 Learning Objectives
+### ⏱️ Complexity
 
-Through this repository, I am practicing:
+Using a Priority Queue and adjacency list:
+
+```text
+Time Complexity  : O(E log V)
+Space Complexity : O(V + E)
+```
+
+---
+
+# ⚡ 2. Bellman-Ford Algorithm
+
+**File:** `bellmanFord.java`
+
+Bellman-Ford is a **single-source shortest path algorithm** that calculates the shortest distance from a source vertex to all other vertices.
+
+One of its important advantages is that it can work with **negative edge weights**.
+
+It can also detect the presence of a **negative-weight cycle**.
+
+### 💡 Key Concept
+
+The algorithm repeatedly relaxes every edge.
+
+For an edge:
+
+```text
+u → v
+```
+
+with weight `w`, the relaxation condition is:
+
+```text
+distance[v] > distance[u] + w
+```
+
+If true:
+
+```text
+distance[v] = distance[u] + w
+```
+
+### 🔄 General Approach
+
+```text
+Initialize distances
+        ↓
+Set source distance = 0
+        ↓
+Relax all edges V - 1 times
+        ↓
+Check edges one more time
+        ↓
+Negative cycle detected?
+        ↓
+Print shortest distances
+```
+
+### ⏱️ Complexity
+
+```text
+Time Complexity  : O(V × E)
+Space Complexity : O(V)
+```
+
+---
+
+# 🧠 Important Graph Concepts
+
+### Graph
+
+A graph consists of:
+
+```text
+Vertices (Nodes)
+        +
+Edges (Connections)
+```
+
+Graphs can be:
+
+* Directed
+* Undirected
+* Weighted
+* Unweighted
+* Cyclic
+* Acyclic
+* Connected
+* Disconnected
+
+---
+
+## 🌲 Minimum Spanning Tree
+
+A Minimum Spanning Tree is a spanning tree of a connected weighted undirected graph with the minimum possible total edge weight.
+
+Important MST algorithms:
+
+```text
+Prim's Algorithm
+Kruskal's Algorithm
+```
+
+---
+
+## 📍 Shortest Path
+
+Shortest path algorithms are used to find minimum-cost paths between vertices.
+
+Important algorithms include:
+
+```text
+BFS
+Dijkstra
+Bellman-Ford
+Floyd-Warshall
+```
+
+---
+
+# 📊 Algorithm Comparison
+
+| Algorithm    | Purpose                           | Negative Edges | Negative Cycle Detection |
+| ------------ | --------------------------------- | -------------: | -----------------------: |
+| BFS          | Shortest path in unweighted graph |              ❌ |                        ❌ |
+| Dijkstra     | Shortest path                     |              ❌ |                        ❌ |
+| Bellman-Ford | Shortest path                     |              ✅ |                        ✅ |
+| Prim's       | Minimum Spanning Tree             |            N/A |                      N/A |
+| Kruskal's    | Minimum Spanning Tree             |            N/A |                      N/A |
+
+---
+
+# 🎓 Learning Objectives
+
+Through this repository, I am improving my understanding of:
 
 * Graph representation
 * Weighted graphs
+* Graph traversal
 * Minimum Spanning Trees
 * Shortest path algorithms
 * Greedy algorithms
-* Relaxation technique
-* Negative-weight edge handling
-* Algorithmic complexity analysis
-* Java implementation of DSA concepts
+* Edge relaxation
+* Negative edge weights
+* Negative cycle detection
+* Priority Queues
+* Time & Space Complexity
+* Java implementation of algorithms
 
-## 🚀 How to Run
+---
 
-Clone the repository:
+# 💻 DSA Journey
 
-```bash
-git clone https://github.com/ujjawal808/Graph4.git
+This repository is part of my broader **Java + DSA practice journey**.
+
+### Topics Practiced
+
+```text
+✅ Arrays
+✅ Strings
+✅ Linked Lists
+✅ Stack
+✅ Queue
+✅ Binary Trees
+✅ Binary Search Trees
+✅ Graphs
+🔄 Dynamic Programming
+🔄 Advanced Graph Algorithms
 ```
 
-Navigate to the project:
+---
 
-```bash
-cd Graph4
+# 🧩 Problem-Solving Approach
+
+For every algorithm, I focus on:
+
+```text
+1. Understand the problem
+        ↓
+2. Identify the appropriate data structure
+        ↓
+3. Understand the algorithm
+        ↓
+4. Implement it in Java
+        ↓
+5. Analyze Time Complexity
+        ↓
+6. Analyze Space Complexity
+        ↓
+7. Test with different inputs
 ```
 
-Compile a Java file:
+---
 
-```bash
-javac MST_primsAlgo.java
+# 📈 Current Focus
+
+Currently focusing on:
+
+* 🧠 Advanced DSA
+* ☕ Java Problem Solving
+* 🌐 Graph Algorithms
+* 🌲 Trees
+* ⚡ Dynamic Programming
+* 💻 LeetCode Problems
+* 🎯 Placement Preparation
+* 🚀 Software Engineering Fundamentals
+
+---
+
+# 🏆 DSA Goals
+
+My current goals include:
+
+* Solve more **DSA problems**
+* Improve problem-solving speed
+* Master Graph algorithms
+* Strengthen Java fundamentals
+* Prepare for technical interviews
+* Build efficient and optimized solutions
+* Improve competitive programming skills
+
+---
+
+# 📊 GitHub Statistics
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=ujjawal808&show_icons=true&theme=tokyonight&hide_border=true" height="180"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ujjawal808&layout=compact&theme=tokyonight&hide_border=true" height="180"/>
+</p>
+
+---
+
+# 🔥 GitHub Streak
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=ujjawal808&theme=tokyonight&hide_border=true" />
+</p>
+
+---
+
+# 🧑‍💻 Developer Journey
+
+```text
+Learning
+   ↓
+Understanding
+   ↓
+Implementation
+   ↓
+Problem Solving
+   ↓
+Optimization
+   ↓
+Interview Preparation
+   ↓
+Software Engineer 🚀
 ```
 
-Run it:
+I believe consistent practice and understanding the fundamentals are the keys to becoming a strong software developer.
 
-```bash
-java MST_primsAlgo
-```
+---
 
-For Bellman-Ford:
+# 📌 Future Improvements
 
-```bash
-javac bellmanFord.java
-java bellmanFord
-```
+Planned additions to this repository:
 
-## 📈 DSA Practice
+* [ ] BFS
+* [ ] DFS
+* [ ] Dijkstra's Algorithm
+* [ ] Kruskal's Algorithm
+* [ ] Topological Sort
+* [ ] Cycle Detection
+* [ ] Disjoint Set Union
+* [ ] Floyd-Warshall Algorithm
+* [ ] Strongly Connected Components
+* [ ] Advanced Graph Problems
+* [ ] More interview-oriented problems
 
-This repository is part of my ongoing **Java + DSA practice**, where I am implementing data structures and algorithms to strengthen problem-solving and coding skills.
+---
 
-### Current Focus
+# 🔗 Connect With Me
 
-* Graph Algorithms
-* Trees & Binary Search Trees
-* BFS & DFS
-* Shortest Path Algorithms
-* Dyna
+<p align="center">
+
+<a href="https://github.com/ujjawal808">
+<img src="https://img.shields.io/badge/GitHub-ujjawal808-181717?style=for-the-badge&logo=github"/>
+</a>
+
+<a href="https://leetcode.com/u/Ujjawalbaliyan/">
+<img src="https://img.shields.io/badge/LeetCode-Ujjawalbaliyan-orange?style=for-the-badge&logo=leetcode"/>
+</a>
+
+</p>
+
+---
+
+# ⭐ Support
+
+If you find this repository useful, consider giving it a ⭐ on GitHub.
+
+---
+
+## 👨‍💻 Author
+
+**Ujjawal Baliyan**
+
+MCA Student | Java | DSA | Problem Solving | Software Development
+
+> **Keep Learning. Keep Coding. Keep Building. 🚀**
